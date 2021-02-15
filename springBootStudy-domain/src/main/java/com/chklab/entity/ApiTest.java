@@ -7,8 +7,9 @@ import java.math.BigDecimal;
 
 @Getter
 @Setter
-public class ApiTestEntity {
+public class ApiTest {
 
+    private String name;
     private BigDecimal status;
     private String comment;
 

@@ -11,6 +11,7 @@
         <module>springBootStudy-boot</module>
         <module>springBootStudy-service</module>
         <module>springBootStudy-domain</module>
+        <module>springBootStudy-store</module>
     </modules>
 
     <parent>
