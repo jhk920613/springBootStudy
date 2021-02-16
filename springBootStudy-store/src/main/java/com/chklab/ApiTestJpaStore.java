@@ -4,7 +4,6 @@ import com.chklab.entity.ApiTest;
 import com.chklab.jpo.ApiTestJpo;
 import com.chklab.repository.ApiTestRepository;
 import com.chklab.store.ApiTestStore;
-import com.chklab.util.GsonUtil;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -52,5 +51,10 @@ public class ApiTestJpaStore implements ApiTestStore {
     @Override
     public List<ApiTest> findAll() {
         return ApiTestJpo.toDomains(this.apiTestRepository.findAll());
+    }
+
+    @Override
+    public List<ApiTest> findByStatus(Integer status) {
+        return ApiTestJpo.toDomains(this.apiTestRepository.findByStatus(status));
     }
 }

@@ -1,4 +1,4 @@
-package com.chklab.util;
+package com.chklab.logic.util;
 
 import com.google.gson.Gson;
 

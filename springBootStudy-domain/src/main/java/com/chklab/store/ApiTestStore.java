@@ -17,4 +17,6 @@ public interface ApiTestStore {
 
     List<ApiTest> findAll();
 
+    List<ApiTest> findByStatus(Integer status);
+
 }

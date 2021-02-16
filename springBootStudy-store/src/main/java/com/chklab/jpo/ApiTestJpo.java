@@ -1,7 +1,6 @@
 package com.chklab.jpo;
 
 import com.chklab.entity.ApiTest;
-import com.chklab.util.GsonUtil;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,11 +8,8 @@ import org.springframework.beans.BeanUtils;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -22,11 +18,15 @@ import java.util.stream.StreamSupport;
 @Setter
 @NoArgsConstructor
 @Entity
+@Table(name="sample")
 public class ApiTestJpo {
 
     @Id
+    @Column(name = "name", nullable = false)
     private String name;
-    private BigDecimal status;
+    @Column(name = "status", nullable = false)
+    private Integer status;
+    @Column(name = "comment", nullable = false)
     private String comment;
 
     public ApiTestJpo(ApiTest apiTest) {

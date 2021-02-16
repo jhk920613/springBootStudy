@@ -4,7 +4,6 @@ package com.chklab.rest;
 import com.chklab.entity.ApiTest;
 import com.chklab.lifecycle.ServiceLifeCycle;
 import com.chklab.spec.ApiTestService;
-import com.chklab.util.GsonUtil;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 @RestController
@@ -52,5 +50,10 @@ public class ApiTestResource {
     @GetMapping(path = "/findAll")
     public List<ApiTest> findAll() {
         return this.apiTestService.findAll();
+    }
+
+    @GetMapping(path = "/findByStatus/{status}")
+    public List<ApiTest> findByStatus(@PathVariable("status") Integer status) {
+        return this.apiTestService.findByStatus(status);
     }
 }

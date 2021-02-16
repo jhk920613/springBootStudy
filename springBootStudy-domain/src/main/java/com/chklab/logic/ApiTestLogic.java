@@ -47,4 +47,9 @@ public class ApiTestLogic implements ApiTestService {
 
         return this.apiTestStore.findAll();
     }
+
+    @Override
+    public List<ApiTest> findByStatus(Integer status) {
+        return this.apiTestStore.findByStatus(status);
+    }
 }

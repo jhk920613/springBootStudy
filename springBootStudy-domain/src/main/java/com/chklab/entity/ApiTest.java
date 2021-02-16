@@ -1,16 +1,18 @@
 package com.chklab.entity;
 
+import com.chklab.logic.util.GsonUtil;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 @Getter
 @Setter
 public class ApiTest {
 
     private String name;
-    private BigDecimal status;
+    private Integer status;
     private String comment;
 
 }
